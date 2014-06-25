@@ -3,6 +3,7 @@
 <h1>Blog posts</h1>
 
 <?php 
+//<a href="/cakephpExplorer/posts/add">Add Post</a>
 echo $this->Html->link(
     'Add Post',
     array('controller' => 'posts', 'action' => 'add')
@@ -13,6 +14,7 @@ echo $this->Html->link(
     <tr>
         <th>Id</th>
         <th>Title</th>
+        <th>Action</th>
         <th>Created</th>
     </tr>
 
@@ -74,6 +76,14 @@ echo $this->Html->link(
                                                     $post['Post']['id']
                                                   )
                                           ); ?>
+        </td>
+        <td>
+            <?php
+                echo $this->Html->link(
+                    'Edit',
+                    array('action' => 'edit', $post['Post']['id'])
+                );
+            ?>
         </td>
         <td><?php echo $post['Post']['created']; ?></td>
     </tr>
