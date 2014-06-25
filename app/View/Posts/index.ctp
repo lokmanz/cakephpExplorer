@@ -1,6 +1,14 @@
 <!-- File: /app/View/Posts/index.ctp -->
 
 <h1>Blog posts</h1>
+
+<?php 
+echo $this->Html->link(
+    'Add Post',
+    array('controller' => 'posts', 'action' => 'add')
+); 
+?>
+
 <table>
     <tr>
         <th>Id</th>
@@ -56,7 +64,9 @@
             <?php
             //link(string $title, mixed $url = null, array $options = array(), string $confirmMessage = false)
             ?>
-            <?php echo $this->Html->link(
+            <?php 
+                //<a href="/cakephpExplorer/posts/view/1">The title</a>
+                echo $this->Html->link(
                                             $post['Post']['title'],
                                             array(
                                                     'controller' => 'posts', 
