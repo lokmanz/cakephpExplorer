@@ -1,0 +1,11 @@
+<h4>
+	<?php 
+		if ($this->Auth->user('id')!='') {
+			# code...
+			echo $this->Auth->user('username')."[ ".this->Auth->user('id')." ]";
+		} else {
+			# code...
+			echo "No login user";
+		}
+		
+	?></h4>

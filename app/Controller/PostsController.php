@@ -47,6 +47,12 @@ class PostsController extends AppController {
         	//but clears Model::$id and sets Model::$data based on your database field defaults.
             $this->Post->create();
 
+            //to store the currently logged in user as a reference for the created post
+            //The user() function provided by the component returns any column 
+            //from the currently logged in user. We used this method to add 
+            //the data into the request info that is saved.
+            $this->request->data['Post']['user_id'] = $this->Auth->user('id');
+
             //When a user uses a form to POST data to your application, 
             //that information is available in $this->request->data. 
             if ($this->Post->save($this->request->data)) {

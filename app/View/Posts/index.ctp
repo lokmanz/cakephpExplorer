@@ -2,6 +2,7 @@
 
 <h1>Blog posts</h1>
 
+
 <?php 
 //<a href="/cakephpExplorer/posts/add">Add Post</a>
 echo $this->Html->link(
